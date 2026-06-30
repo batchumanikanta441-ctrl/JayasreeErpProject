@@ -219,8 +219,10 @@ export default function AnalyticsPage() {
                   borderRadius: 8,
                   fontSize: 13,
                 }}
-                formatter={(v: number) =>
-                  formatCurrency(v)
+                formatter={(v) =>
+                  typeof v === "number"
+                    ? formatCurrency(v)
+                    : String(v ?? "")
                 }
               />
 
@@ -280,8 +282,11 @@ export default function AnalyticsPage() {
                   borderRadius: 8,
                   fontSize: 13,
                 }}
-                formatter={(v: number) =>
-                  formatCurrency(v)
+                formatter={(v) =>
+                  typeof v === "number"
+                    ? formatCurrency(v)
+                    : String(v ?? "")
+
                 }
               />
 
@@ -326,7 +331,7 @@ export default function AnalyticsPage() {
                 outerRadius={100}
                 dataKey="value"
                 label={({ name, percent }) =>
-                  `${name} ${(percent * 100).toFixed(0)}%`
+                  `${name} ${((percent ?? 0) * 100).toFixed(0)}%`
                 }
                 labelLine={false}
                 fontSize={11}
@@ -544,8 +549,11 @@ export default function AnalyticsPage() {
                 borderRadius: 8,
                 fontSize: 13,
               }}
-              formatter={(v: number) =>
-                formatCurrency(v)
+              formatter={(v) =>
+                typeof v === "number"
+                  ? formatCurrency(v)
+                  : String(v ?? "")
+
               }
             />
 

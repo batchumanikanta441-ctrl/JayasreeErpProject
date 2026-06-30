@@ -99,7 +99,9 @@ const fetchProducts = async () => {
           {Object.entries(product.specifications).map(([key, value]) => (
             <div key={key} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.625rem 0', borderBottom: '1px solid var(--border-secondary)' }}>
               <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{key}</span>
-              <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>{value}</span>
+              <span style={{ fontWeight: 600, fontSize: "0.85rem" }}>
+  {String(value)}
+</span>
             </div>
           ))}
         </div>
